@@ -2,7 +2,9 @@
 <Image src="res://background" stretch="fill"></Image>
 <StackLayout orientation="vertical" verticalAlignment="center">
     <WrapLayout orientation="vertical" >  
-    <label text="Vides: {{vides}}" class="label"></label>
+        <WrapLayout orientation="horizontal">
+            <Image src="res://heart2" class="heart" *ngFor = "let vida of vides;"></Image>
+        </WrapLayout>
     <label text="Temps: {{temps}}" class="label"></label>
     <label text="Punts: {{punts}}" class="label"></label>
     </WrapLayout>

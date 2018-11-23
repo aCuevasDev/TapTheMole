@@ -13,9 +13,11 @@ import {Component, OnInit} from "@angular/core";
     estats = Array(this.toposInit).fill(this.forat);
     punts = 0;
     lastPunts = 0;
-    temps = 30;
+    tempsInit = 30;
+    temps = this.tempsInit;
     buffertemps = 0;
-    vides = 3;
+    videsInit = 5;
+    vides = new Array(this.videsInit);
     playable = true;
     gameOver="";
     timer;
@@ -56,8 +58,8 @@ import {Component, OnInit} from "@angular/core";
         if(this.playable){
         switch(this.estats[pos]){
             case this.topo: this.estats[pos] = this.forat;
-            this.vides -= 1;
-            if (this.vides == 0)
+            this.vides.length -= 1;
+            if (this.vides.length == 0)
               this.hasPerdido();
             break;
             case this.forat: this.estats[pos] = this.topo;
@@ -89,12 +91,12 @@ import {Component, OnInit} from "@angular/core";
         clearInterval(this.interval);
         this.estats = Array(this.toposInit).fill(this.forat);
         this.intervalTime = 500;
-        this.temps = 30;
+        this.temps = this.tempsInit;
         this.punts = 0;
         this.lastPunts = 0;
         this.buffertemps = 0;
         this.playable = true;
-        this.vides = 3;
+        this.vides = Array(this.videsInit).fill(true);
         this.gameOver="";
         this.iniciaInterval();
         this.estats.fill(this.forat);

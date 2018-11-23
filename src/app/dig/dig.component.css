@@ -8,6 +8,11 @@
     color: white;
 }
 
+.heart{
+	width: 10%;
+	height: 10%;
+}
+
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #cc0ecc;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #cc0ecc;
