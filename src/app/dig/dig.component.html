@@ -1,0 +1,15 @@
+
+<Image src="res://background" stretch="fill"></Image>
+<StackLayout orientation="vertical" verticalAlignment="center">
+    <WrapLayout orientation="vertical" >  
+    <label text="Vides: {{vides}}" class="label"></label>
+    <label text="Temps: {{temps}}" class="label"></label>
+    <label text="Punts: {{punts}}" class="label"></label>
+    </WrapLayout>
+
+    <WrapLayout orientation="horizontal" horizontalAlignment="center">
+        <Image src="{{estats[i]}}" class="dig" (tap)= "onClick(i)" *ngFor = "let estat of estats; index as i" ></Image>
+    </WrapLayout>
+    <label text="{{gameOver}}" class="label"></label>
+    <button text="Reiniciar" (tap)="reset()" class="myButton"></button>
+</StackLayout>
